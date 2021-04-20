@@ -1,28 +1,35 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div id="app">
+
+		<HelloWorld v-for="item in messages" :msg="item.msg" :yes="item.yes" />
+		<List  v-for="item in messages" :msg="item.msg" :yes="item.yes"></List>
+		<input  />
+		
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+	import HelloWorld from './components/HelloWorld.vue'
+import List from './components/List.vue'
+	export default {
+		name: 'app',
+		components: {
+			HelloWorld,List
+		},
+		data: () => {
+			return {
+				messages: [{
+					msg: '张三',
+					yes: 'hh'
+				}, {
+					msg: '张三1',
+					yes: 'hh2'
+				}]
+			}
+		}
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+	}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
