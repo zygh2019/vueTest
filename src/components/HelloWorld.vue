@@ -3,7 +3,7 @@
 		<p>我是普通用户</p>
 		<h1>{{ msg }}</h1>
 		<h2>{{yes}}</h2>
-		<button @click="get('哈哈')">点击购买了{{count}}次</button>
+		<button @click="get()">点击购买了{{count}}次</button>
 	</div>
 </template>
 
@@ -15,14 +15,15 @@
 			yes: String
 		},
 		methods: {
-			get: function(msg) {
-				this.$emit('get',msg);
+			get: function() {
+			//	this.msg = "hhhhhhhhh"
+				this.$emit('get');
 			}
 
 		},
 		data: () => {
 			return {
-				count:0
+				count: 0
 			}
 		}
 

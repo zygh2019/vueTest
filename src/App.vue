@@ -69,8 +69,9 @@
 			},
 			init: function() {
 				this.meee1 = "234"
-			},test:function(d){
-				alert(d)
+			},test:function(){
+				
+				console.log(this.$children)
 			}
 		}
 
