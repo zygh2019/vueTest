@@ -7,8 +7,8 @@
 			<List v-for="item in messages" :msg="item.msg" :yes="item.yes"></List>
 		</div>
 		<input @input="change()" v-model="inputData" />
-		<h1>{{meee}}</h1>
-		<h1>{{meee1}}</h1>
+		<h1 :class="{a:isHi}">{{meee}}</h1>
+		<h1 class="b">{{meee1}}</h1>
 		<h1>{{count}}</h1>
 		<button type="button" @click="change()">切换</button>
 		<button type="button" @click="init()">count+1</button>
@@ -60,9 +60,7 @@
 		限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。
 		这些都是计算属性无法做到的。**/
 		watch: {
-			meee1: () => {
-				alert("我是通过watch得到的")
-			}
+			meee1: () => {}
 		},
 		methods: {
 			change: function() {
@@ -78,4 +76,11 @@
 </script>
 
 <style>
+	.a {
+		background-color: antiquewhite;
+	}
+
+	.b {
+		background-color: royalblue
+	}
 </style>

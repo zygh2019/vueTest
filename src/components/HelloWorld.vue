@@ -1,6 +1,6 @@
 <template>
 	<div class="hello">
-		<h1>我是普通用户</h1>
+		<p>我是普通用户</p>
 		<h1>{{ msg }}</h1>
 		<h2>{{yes}}</h2>
 	</div>
@@ -18,4 +18,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+	p{
+		font-size: 0.625rem;
+	}
 </style>
