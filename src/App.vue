@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<div v-if="isHi">
-			<HelloWorld v-for="item in messages" :msg="item.msg" :yes="item.yes" />
+			<HelloWorld v-for="item in messages" :msg="item.msg" :yes="item.yes" @get="test" />
 		</div>
 		<div v-else>
 			<List v-for="item in messages" :msg="item.msg" :yes="item.yes"></List>
@@ -69,6 +69,8 @@
 			},
 			init: function() {
 				this.meee1 = "234"
+			},test:function(d){
+				alert(d)
 			}
 		}
 
