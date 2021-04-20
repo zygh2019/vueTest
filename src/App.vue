@@ -6,7 +6,7 @@
 		<div v-else>
 			<List v-for="item in messages" :msg="item.msg" :yes="item.yes"></List>
 		</div>
-		<input />
+		<input @input="change()"/>
 		<h1>{{meee}}</h1>
 		<button type="button" @click="change()">切换</button>
 	</div>
