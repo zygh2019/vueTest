@@ -1,20 +1,26 @@
 <template>
 	<div id="app">
-
-		<HelloWorld v-for="item in messages" :msg="item.msg" :yes="item.yes" />
-		<List  v-for="item in messages" :msg="item.msg" :yes="item.yes"></List>
-		<input  />
-		
+		<div v-if="isHi">
+			<HelloWorld v-for="item in messages" :msg="item.msg" :yes="item.yes" />
+		</div>
+		<div v-else>
+			<List v-for="item in messages" :msg="item.msg" :yes="item.yes"></List>
+		</div>
+		<input />
+		<h1>{{meee}}</h1>
+		<button type="button" @click="change()">切换</button>
 	</div>
+
 </template>
 
 <script>
 	import HelloWorld from './components/HelloWorld.vue'
-import List from './components/List.vue'
+	import List from './components/List.vue'
 	export default {
 		name: 'app',
 		components: {
-			HelloWorld,List
+			HelloWorld,
+			List
 		},
 		data: () => {
 			return {
@@ -24,7 +30,20 @@ import List from './components/List.vue'
 				}, {
 					msg: '张三1',
 					yes: 'hh2'
-				}]
+				}],
+				isHi: false
+
+			}
+		},
+		computed: {
+			meee: function() {
+				return Date.now()
+			}
+		},
+		methods: {
+			change: function() {
+				return this.isHi = !this.isHi
+				
 			}
 		}
 
