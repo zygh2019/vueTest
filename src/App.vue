@@ -20,12 +20,15 @@
 <script>
 	import HelloWorld from './components/HelloWorld.vue'
 	import List from './components/List.vue'
+	import prLog from './prLog'
 	export default {
 		name: 'app',
 		components: {
 			HelloWorld,
-			List
+			List,
+			prLog
 		},
+		mixins: [prLog],
 		data: () => {
 			return {
 				messages: [{
@@ -71,6 +74,7 @@
 			},
 			init: function() {
 				this.meee1 = "234"
+				this.prLog("进行付值",this.meee1)
 			},
 			test: function() {
 
