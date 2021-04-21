@@ -12,6 +12,7 @@
 		<h1>{{count}}</h1>
 		<button type="button" @click="change()">切换</button>
 		<button type="button" @click="init()">count+1</button>
+		<component :is="changeCom"></component>
 	</div>
 
 </template>
@@ -36,7 +37,8 @@
 				}],
 				isHi: false,
 				inputData: '初始值',
-				count: 0
+				count: 0,
+				changeCom: List
 
 			}
 		},
@@ -69,9 +71,10 @@
 			},
 			init: function() {
 				this.meee1 = "234"
-			},test:function(){
-				
-				console.log(this.$children)
+			},
+			test: function() {
+
+				console.log(this.$children.count)
 			}
 		}
 
